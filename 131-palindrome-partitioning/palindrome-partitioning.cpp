@@ -6,7 +6,7 @@ public:
         return s==s2;
     }
     void solve(string s,vector<vector<string>>&ans,vector<string>&v){
-        // base cases
+        // base case
         if(s.size()==0){
             ans.push_back(v);
             return;
