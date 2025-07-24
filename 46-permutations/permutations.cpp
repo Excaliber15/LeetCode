@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void printAllPermutations(vector<int>& nums,vector<vector<int>>&ans,int i){
+    void printAllPermutations(vector<int>&nums,vector<vector<int>>&ans,int i){
         // base case
         if(i>=nums.size()){
             ans.push_back(nums);
@@ -9,7 +9,7 @@ public:
         for(int j=i;j<nums.size();j++){
             swap(nums[i],nums[j]);
             printAllPermutations(nums,ans,i+1);
-            swap(nums[i],nums[j]); // back tracking
+            swap(nums[i],nums[j]);
         }
     }
     vector<vector<int>> permute(vector<int>& nums) {
