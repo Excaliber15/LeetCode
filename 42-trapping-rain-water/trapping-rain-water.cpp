@@ -4,9 +4,7 @@ public:
         int n=height.size();
         int lo=0;
         int hi=n-1;
-        int lmax=0;
-        int rmax=0;
-        int ans=0;
+        int lmax=0,rmax=0,ans=0;
         while(lo<hi){
             lmax=max(lmax,height[lo]);
             rmax=max(rmax,height[hi]);
