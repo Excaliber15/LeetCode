@@ -1,15 +1,15 @@
 class Solution {
 public:
     bool isValid(string s) {
-        stack<char>st;
+        stack<int>st;
         for(int i=0;i<s.size();i++){
             char ch=s[i];
             if(ch=='(' || ch=='{' || ch=='['){
-                // opening brackets
+                // open brackets
                 st.push(ch);
             }
             else{
-                // closing brackets
+                // closed brackets
                 if(!st.empty()){
                     if(ch==')' && st.top()=='('){
                         st.pop();
@@ -21,7 +21,7 @@ public:
                         st.pop();
                     }
                     else{
-                        // no match
+                        // invalid case
                         return false;
                     }
                 }
@@ -31,7 +31,11 @@ public:
                 }
             }
         }
-        if(st.size()==0) return true;
-        else return false;
+        if(st.size()==0){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 };
