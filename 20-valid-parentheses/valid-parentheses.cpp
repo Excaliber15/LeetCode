@@ -21,20 +21,17 @@ public:
                         st.pop();
                     }
                     else{
+                        // no match
                         return false;
                     }
                 }
                 else{
-                    // invalid case
+                    // stack is empty
                     return false;
                 }
             }
         }
-        if(st.size()==0){
-            return true;
-        }
-        else{
-            return false;
-        }
+        if(st.size()==0) return true;
+        else return false;
     }
 };
