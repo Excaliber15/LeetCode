@@ -9,7 +9,7 @@ class Solution {
             while(s.size()>0 && arr[s.top()]<=arr[i]){
                 s.pop();
             }
-            if(s.empty()){
+            if(s.size()==0){
                 ans[i]=i+1;
             }
             else{
