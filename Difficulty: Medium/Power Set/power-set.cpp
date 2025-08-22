@@ -1,24 +1,26 @@
 class Solution {
   public:
-    void printAllSubsequences(string s,vector<string>&ans,string output,int i){
+    void prinAllSubsequneces(string s,vector<string>&ans,int index,string output){
         // base case
-        if(i>=s.size()){
+        if(index>=s.length()){
             if(output.length()>0){
                 ans.push_back(output);
             }
             return;
         }
-        char ch=s[i];
+        char ch=s[index];
         // include ans
-        printAllSubsequences(s,ans,output+ch,i+1);
+        prinAllSubsequneces(s,ans,index+1,output+ch);
         // exclude ans
-        printAllSubsequences(s,ans,output,i+1);
+        prinAllSubsequneces(s,ans,index+1,output);
     }
     vector<string> AllPossibleStrings(string s) {
+        // Code here
         vector<string>ans;
-        string output="";
         int index=0;
-        printAllSubsequences(s,ans,output,index);
+        string output="";
+        prinAllSubsequneces(s,ans,index,output);
+        // sort  lexographically
         sort(ans.begin(),ans.end());
         return ans;
     }
