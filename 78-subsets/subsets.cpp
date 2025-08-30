@@ -9,8 +9,8 @@ public:
         // include case
         v.push_back(nums[i]);
         printAllSubsets(nums,ans,v,i+1);
-        // exclude case
         v.pop_back();
+        // exclude case
         printAllSubsets(nums,ans,v,i+1);
     }
     vector<vector<int>> subsets(vector<int>& nums) {
