@@ -10,9 +10,9 @@ public:
         v.push_back(nums[i]);
         printAllSubsets(nums,ans,v,i+1);
         v.pop_back();
-        // exclude case
         int idx=i+1;
         while(idx<nums.size() && nums[idx]==nums[idx-1]) idx++;
+        // exclude case
         printAllSubsets(nums,ans,v,idx);
     }
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
