@@ -1,23 +1,22 @@
 class Solution {
   public:
-    void printAllSums(vector<int>&arr,vector<int>&ans,int i,int sum){
+    void printAllSubsetSums(vector<int>& arr,vector<int>&ans,int sum,int i){
         // base case
         if(i>=arr.size()){
             ans.push_back(sum);
             return;
         }
-        int ele=arr[i];
-        // include ans
-        printAllSums(arr,ans,i+1,sum+arr[i]);
-        // exclude ans
-        printAllSums(arr,ans,i+1,sum);
+        // include case
+        printAllSubsetSums(arr,ans,sum+arr[i],i+1);
+        // exclude case
+        printAllSubsetSums(arr,ans,sum,i+1);
     }
     vector<int> subsetSums(vector<int>& arr) {
         // code here
         vector<int>ans;
-        int index=0;
         int sum=0;
-        printAllSums(arr,ans,index,sum);
+        int i=0;
+        printAllSubsetSums(arr,ans,sum,i);
         return ans;
     }
 };
