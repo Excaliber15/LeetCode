@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void printAllPermutations(vector<int>&nums,vector<vector<int>>&ans,int i){
+    void printAllPermutations(vector<int>& nums,vector<vector<int>>&ans,int i){
         // base case
         if(i>=nums.size()){
             ans.push_back(nums);
