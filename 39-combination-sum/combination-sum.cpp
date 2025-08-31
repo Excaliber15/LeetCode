@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void solve(vector<int>& candidates, int target,vector<vector<int>>&ans,vector<int>&v,int index){
+    void combinationSum_helper(vector<int>& candidates, int target,vector<vector<int>>&ans,vector<int>&v,int index){
         // base case
         if(target==0){
             ans.push_back(v);
@@ -10,7 +10,7 @@ public:
 
         for(int i=index;i<candidates.size();i++){
             v.push_back(candidates[i]);
-            solve(candidates,target-candidates[i],ans,v,i);
+            combinationSum_helper(candidates,target-candidates[i],ans,v,i);
             v.pop_back();
         }
     }
@@ -18,7 +18,7 @@ public:
         vector<vector<int>>ans;
         vector<int>v;
         int index=0;
-        solve(candidates,target,ans,v,index);
+        combinationSum_helper(candidates,target,ans,v,index);
         return ans;
     }
 };
