@@ -1,7 +1,6 @@
 class Solution {
   public:
-    
-    void solve(string s,vector<string>&ans,int i,string output){
+    void printAllSubsequences(string s,vector<string>&ans,string output,int i){
         // base case
         if(i>=s.size()){
             if(output.length()>0){
@@ -11,17 +10,17 @@ class Solution {
         }
         char ch=s[i];
         // include ans
-        solve(s,ans,i+1,output+ch);
+        printAllSubsequences(s,ans,output+ch,i+1);
         // exclude ans
-        solve(s,ans,i+1,output);
+        printAllSubsequences(s,ans,output,i+1);
     }
     vector<string> AllPossibleStrings(string s) {
         // Code here
         vector<string>ans;
         int index=0;
         string output="";
-        solve(s,ans,index,output);
-        // sort lexographically
+        printAllSubsequences(s,ans,output,index);
+        // Sort lexographically
         sort(ans.begin(),ans.end());
         return ans;
     }
