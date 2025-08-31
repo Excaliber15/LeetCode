@@ -15,7 +15,7 @@ public:
     }
     vector<vector<int>> subsets(vector<int>& nums) {
         vector<vector<int>>ans;
-        vector<int>v;
+        vector<int>v; // possible answers
         int index=0;
         printAllSubsets(nums,ans,v,index);
         return ans;
