@@ -2,9 +2,7 @@ class Solution {
 public:
     int rob_helper(vector<int>& nums,int i,vector<int>&dp){
         // base case
-        if(i>=nums.size()){
-            return 0;
-        }
+        if(i>=nums.size()) return 0;
         if(dp[i]!=-1) return dp[i];
         int includeAns=nums[i]+rob_helper(nums,i+2,dp);
         int excludeAns=0+rob_helper(nums,i+1,dp);
