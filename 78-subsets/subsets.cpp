@@ -6,16 +6,16 @@ public:
             ans.push_back(v);
             return;
         }
-        // include case
+        // include ans
         v.push_back(nums[i]);
         printAllSubsets(nums,ans,v,i+1);
         v.pop_back();
-        // exclude case
+        // exclude ans
         printAllSubsets(nums,ans,v,i+1);
     }
     vector<vector<int>> subsets(vector<int>& nums) {
         vector<vector<int>>ans;
-        vector<int>v; // possible answers
+        vector<int>v;
         int index=0;
         printAllSubsets(nums,ans,v,index);
         return ans;
