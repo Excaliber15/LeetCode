@@ -9,7 +9,7 @@ class Solution {
         for(int j=i;j<s.length();j++){
             swap(s[i],s[j]);
             printAllPermutations(s,ans,i+1);
-            swap(s[i],s[j]);
+            swap(s[i],s[j]); // backTrack
         }
     }
     vector<string> findPermutation(string &s) {
@@ -18,7 +18,7 @@ class Solution {
         int index=0;
         printAllPermutations(s,ans,index);
         sort(ans.begin(),ans.end());
-        ans.erase(unique(ans.begin(), ans.end()), ans.end()); // ✅ remove duplicates
+        ans.erase(unique(ans.begin(),ans.end()),ans.end());
         return ans;
     }
 };
