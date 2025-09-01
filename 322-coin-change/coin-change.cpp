@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int coinChange_helper(vector<int>& coins, int amount,vector<int>&dp){
+    int coinChange_Solver(vector<int>& coins, int amount,vector<int>&dp){
         // base case
         if(amount==0) return 0;
         if(amount<0) return INT_MAX;
@@ -9,7 +9,7 @@ public:
         for(int i=0;i<coins.size();i++){
             int coin=coins[i];
             if(coin<=amount){
-                int recAns=coinChange_helper(coins,amount-coin,dp);
+                int recAns=coinChange_Solver(coins,amount-coin,dp);
                 if(recAns!=INT_MAX){
                     int minCoinUsed=1+recAns;
                     minCoinAns=min(minCoinAns,minCoinUsed);
@@ -21,7 +21,7 @@ public:
     }
     int coinChange(vector<int>& coins, int amount) {
         vector<int>dp(amount+1,-1);
-        int ans=coinChange_helper(coins,amount,dp);
+        int ans=coinChange_Solver(coins,amount,dp);
         if(ans==INT_MAX) return -1;
         return ans;
     }
