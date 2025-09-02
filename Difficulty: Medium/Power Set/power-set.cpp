@@ -1,6 +1,6 @@
 class Solution {
   public:
-    void printAllPermutations(string s,vector<string>&ans,int i,string output){
+    void printAllSubsequences(string s,vector<string>&ans,int i,string output){
         // base case
         if(i>=s.size()){
             if(output.length()>0){
@@ -10,18 +10,17 @@ class Solution {
         }
         char ch=s[i];
         // include ans
-        printAllPermutations(s,ans,i+1,output+ch);
+        printAllSubsequences(s,ans,i+1,output+ch);
         // exclude ans
-        printAllPermutations(s,ans,i+1,output);
+        printAllSubsequences(s,ans,i+1,output);
     }
     vector<string> AllPossibleStrings(string s) {
         // Code here
         vector<string>ans;
         int index=0;
         string output="";
-        printAllPermutations(s,ans,index,output);
-        // sort in lexographically order
-        sort(ans.begin(),ans.end());
+        printAllSubsequences(s,ans,index,output);
+        sort(ans.begin(),ans.end()); // sort lexographically
         return ans;
     }
 };
