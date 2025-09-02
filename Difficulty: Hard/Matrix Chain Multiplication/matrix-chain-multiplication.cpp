@@ -5,8 +5,9 @@ class Solution {
         if(i==j) return 0;
         if(dp[i][j]!=-1) return dp[i][j];
         int minAns=1e9;
+        // partitions
         for(int k=i;k<j;k++){
-            int steps=arr[i-1] * arr[k] * arr[j]+f(arr,i,k,dp)+f(arr,k+1,j,dp);
+            int steps=arr[i-1]*arr[k]*arr[j]+f(arr,i,k,dp)+f(arr,k+1,j,dp);
             minAns=min(minAns,steps);
         }
         dp[i][j]=minAns;
@@ -17,8 +18,7 @@ class Solution {
         int n=arr.size();
         int i=1;
         int j=n-1;
-        vector<vector<int>>dp(n,vector<int>(n,-1));
-        int ans=f(arr,i,j,dp);
-        return ans;
+        vector<vector<int>>dp(n+1,vector<int>(n,-1));
+        return f(arr,i,j,dp);
     }
 };
