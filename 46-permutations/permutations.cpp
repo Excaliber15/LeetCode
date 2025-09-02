@@ -9,7 +9,7 @@ public:
         for(int j=i;j<nums.size();j++){
             swap(nums[i],nums[j]);
             printAllPermutations(nums,ans,i+1);
-            swap(nums[i],nums[j]);
+            swap(nums[i],nums[j]); // backTrack
         }
     }
     vector<vector<int>> permute(vector<int>& nums) {
