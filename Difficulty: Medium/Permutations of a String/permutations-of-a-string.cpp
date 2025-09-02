@@ -1,6 +1,6 @@
 class Solution {
   public:
-    void printAllPermutations(string&s,vector<string>&ans,int i){
+    void printAllPermutations(string &s,vector<string>&ans,int i){
         // base case
         if(i>=s.size()){
             ans.push_back(s);
@@ -9,7 +9,7 @@ class Solution {
         for(int j=i;j<s.length();j++){
             swap(s[i],s[j]);
             printAllPermutations(s,ans,i+1);
-            swap(s[i],s[j]); // backTrack
+            swap(s[i],s[j]); // backTracking
         }
     }
     vector<string> findPermutation(string &s) {
