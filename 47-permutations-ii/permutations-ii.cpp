@@ -9,7 +9,7 @@ public:
         for(int j=i;j<nums.size();j++){
             swap(nums[i],nums[j]);
             printAllPermutations(nums,ans,i+1);
-            swap(nums[i],nums[j]); // backTrack
+            swap(nums[i],nums[j]);
         }
     }
     vector<vector<int>> permuteUnique(vector<int>& nums) {
@@ -17,7 +17,7 @@ public:
         int index=0;
         printAllPermutations(nums,ans,index);
         sort(ans.begin(),ans.end());
-        ans.erase(unique(ans.begin(),ans.end()),ans.end()); // remove duplicates
+        ans.erase(unique(ans.begin(),ans.end()),ans.end());
         return ans;
     }
 };
