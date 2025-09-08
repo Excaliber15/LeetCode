@@ -1,11 +1,9 @@
 class Solution {
   public:
     int f(vector<int> &arr,int i,int j,vector<vector<int>>&dp){
-        // base case
         if(i==j) return 0;
         if(dp[i][j]!=-1) return dp[i][j];
         int minAns=1e9;
-        // partitions
         for(int k=i;k<j;k++){
             int steps=arr[i-1]*arr[k]*arr[j]+f(arr,i,k,dp)+f(arr,k+1,j,dp);
             minAns=min(minAns,steps);
@@ -19,6 +17,7 @@ class Solution {
         int i=1;
         int j=n-1;
         vector<vector<int>>dp(n+1,vector<int>(n,-1));
-        return f(arr,i,j,dp);
+        int ans=f(arr,i,j,dp);
+        return ans;
     }
 };
