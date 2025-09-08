@@ -3,8 +3,8 @@ class Solution {
     bool f(vector<int>& arr, int sum,int i,vector<vector<int>>&dp){
         // base cases
         if(sum==0) return true;
-        if(i==0) return (arr[0]==sum);
         if(dp[sum][i]!=-1) return dp[sum][i];
+        if(i==0) return (arr[0]==sum);
         bool excludeAns=f(arr,sum,i-1,dp);
         bool includeAns=false;
         if(arr[i]<=sum){
