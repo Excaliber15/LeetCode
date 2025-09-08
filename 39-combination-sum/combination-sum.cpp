@@ -1,7 +1,7 @@
 class Solution {
 public:
     void combinationSum_helper(vector<int>& candidates, int target,vector<vector<int>>&ans,vector<int>&v,int index){
-        // base cases
+        // base case
         if(target==0){
             ans.push_back(v);
             return;
@@ -14,10 +14,12 @@ public:
         }
     }
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        //sort(candidates.begin(),candidates.end());
         vector<vector<int>>ans;
         vector<int>v;
         int index=0;
         combinationSum_helper(candidates,target,ans,v,index);
+        sort(ans.begin(),ans.end());
         return ans;
     }
 };
