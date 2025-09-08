@@ -9,7 +9,7 @@ public:
         // include ans
         v.push_back(nums[i]);
         printAllSubsets(nums,ans,v,i+1);
-        v.pop_back(); // backTrack
+        v.pop_back();
         // exclude ans
         printAllSubsets(nums,ans,v,i+1);
     }
