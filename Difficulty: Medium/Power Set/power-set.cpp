@@ -1,7 +1,7 @@
 class Solution {
   public:
     void printAllSubsequences(string s,vector<string>&ans,int i,string output){
-        // base case
+        // base cases
         if(i>=s.size()){
             if(output.length()>0){
                 ans.push_back(output);
@@ -20,7 +20,7 @@ class Solution {
         int index=0;
         string output="";
         printAllSubsequences(s,ans,index,output);
-        sort(ans.begin(),ans.end()); // sort lexographically
+        sort(ans.begin(),ans.end()); // sorted lexographically
         return ans;
     }
 };
