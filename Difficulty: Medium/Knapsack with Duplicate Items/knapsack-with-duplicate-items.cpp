@@ -2,14 +2,13 @@
 
 class Solution {
   public:
-    int knapSack_Solver(vector<int>& val, vector<int>& wt, int capacity, int index,vector<vector<int>>&dp){
-        // base case
+    int knapSack_solver(vector<int>& val, vector<int>& wt, int capacity,int index,vector<vector<int>>&dp){
         if(index==0) return (capacity/wt[0])*val[0];
         if(dp[capacity][index]!=-1) return dp[capacity][index];
-        int excludeAns=0+knapSack_Solver(val,wt,capacity,index-1,dp);
+        int excludeAns=0+knapSack_solver(val,wt,capacity,index-1,dp);
         int includeAns=0;
         if(wt[index]<=capacity){
-            includeAns=val[index]+knapSack_Solver(val,wt,capacity-wt[index],index,dp);
+            includeAns=val[index]+knapSack_solver(val,wt,capacity-wt[index],index,dp);
         }
         int finalAns=max(includeAns,excludeAns);
         dp[capacity][index]=finalAns;
@@ -20,6 +19,7 @@ class Solution {
         int n=val.size();
         int index=n-1;
         vector<vector<int>>dp(capacity+1,vector<int>(n,-1));
-        return knapSack_Solver(val,wt,capacity,index,dp);
+        int ans=knapSack_solver(val,wt,capacity,index,dp);
+        return ans;
     }
 };
