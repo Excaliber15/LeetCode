@@ -7,7 +7,6 @@ public:
         while(lo<hi){
             lmax=max(lmax,height[lo]);
             rmax=max(rmax,height[hi]);
-
             if(lmax<rmax){
                 ans+=(lmax-height[lo]);
                 lo++;
