@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int getQuotient(long long int dividend,long long int divisor){
+        long long int lo=-dividend,hi=dividend,ans=-1;
+        while(lo<=hi){
+            long long int mid=lo+((hi-lo)>>1);
+            if((mid*divisor)==dividend) return mid;
+            else if((mid*divisor)<dividend){
+                ans=mid;
+                lo=mid+1;
+            }
+            else hi=mid-1;
+        }
+        return ans;
+    }
+    int divide(int dividend, int divisor) {
+        if (dividend == INT_MIN && divisor == -1) return INT_MAX;
+        long long int ans=getQuotient(llabs((long long)dividend), llabs((long long)divisor));
+        if((dividend < 0) ^ (divisor < 0)){
+            ans = -ans;
+        }
+        return ans;
+    }
+};
