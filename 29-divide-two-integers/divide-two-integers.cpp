@@ -15,9 +15,7 @@ public:
     }
     int divide(int dividend, int divisor) {
         if(dividend==INT_MIN && divisor==-1) return INT_MAX;
-         //int ans=getQuotient(llabs(long long)(dividend),llabs(long long)divisor));
-         long long int ans = getQuotient(llabs(dividend), llabs(divisor));
-
+        long long int ans=getQuotient(llabs(dividend),llabs(divisor));
         if((dividend<0 && divisor>0) || (dividend>0 && divisor<0)){
             ans=0-ans;
         }
