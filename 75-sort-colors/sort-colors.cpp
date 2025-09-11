@@ -1,9 +1,8 @@
 class Solution {
 public:
     void sortColors(vector<int>& nums) {
-        // Dutch Flag Algo
         int n=nums.size();
-        int lo=0,mid=0,hi=n-1;
+        int lo=0,hi=n-1,mid=0;
         while(mid<=hi){
             if(nums[mid]==2){
                 swap(nums[mid],nums[hi]);
