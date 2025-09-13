@@ -8,12 +8,12 @@ public:
         int excludeAns=0+rob_helper(nums,i+1,dp);
         int finalAns=max(includeAns,excludeAns);
         dp[i]=finalAns;
-        return dp[i];
+        return finalAns;
     }
     int rob(vector<int>& nums) {
         int n=nums.size();
         int index=0;
-        vector<int>dp(n+2,-1);
+        vector<int>dp(n+1,-1);
         int ans=rob_helper(nums,index,dp);
         return ans;
     }
