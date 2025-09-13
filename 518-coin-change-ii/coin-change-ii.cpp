@@ -15,8 +15,8 @@ public:
     }
     int change(int amount, vector<int>& coins) {
         int n=coins.size();
+        vector<vector<int>>dp(amount+1,vector<int>(n,-1));
         int index=n-1;
-        vector<vector<int>>dp(amount+1,vector<int>(n+1,-1));
         int ans=coinChange_helper(amount,coins,index,dp);
         return ans;
     }
