@@ -14,6 +14,7 @@ public:
     }
     vector<vector<int>> permuteUnique(vector<int>& nums) {
         vector<vector<int>>ans;
+        vector<int>v;
         int index=0;
         printAllPermutations(nums,ans,index);
         sort(ans.begin(),ans.end());
