@@ -13,7 +13,7 @@ public:
     int rob(vector<int>& nums) {
         int n=nums.size();
         int index=0;
-        vector<int>dp(n+1,-1);
+        vector<int>dp(n+2,-1);
         int ans=rob_helper(nums,index,dp);
         return ans;
     }
