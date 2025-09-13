@@ -2,9 +2,10 @@
 
 class Solution {
   public:
+    
     int rodCutting_helper(vector<int> &price,int n,int i,vector<vector<int>>&dp){
         // base case
-        if(i==0) return n*price[0];
+        if(i==0) return (n*price[0]);
         if(dp[n][i]!=-1) return dp[n][i];
         int excludeAns=0+rodCutting_helper(price,n,i-1,dp);
         int includeAns=INT_MIN;
