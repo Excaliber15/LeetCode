@@ -1,16 +1,15 @@
 class Solution {
   public:
     void printAllSubsequences(string s,vector<string>&ans,int i,string output){
-        // base cases
+        // base case
         if(i>=s.size()){
             if(output.length()>0){
                 ans.push_back(output);
             }
             return;
         }
-        char ch=s[i];
         // include ans
-        printAllSubsequences(s,ans,i+1,output+ch);
+        printAllSubsequences(s,ans,i+1,output+s[i]);
         // exclude ans
         printAllSubsequences(s,ans,i+1,output);
     }
@@ -20,7 +19,7 @@ class Solution {
         int index=0;
         string output="";
         printAllSubsequences(s,ans,index,output);
-        sort(ans.begin(),ans.end()); // sorted lexographically
+        sort(ans.begin(),ans.end());
         return ans;
     }
 };
