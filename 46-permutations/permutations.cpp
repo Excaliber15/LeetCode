@@ -1,21 +1,21 @@
 class Solution {
 public:
-    void printAllpermutations(vector<int>& nums,vector<vector<int>>&ans,vector<int>&v,int i){
+    void printAllPermutations(vector<int>& nums,vector<vector<int>>&ans,int i){
+        // base case
         if(i>=nums.size()){
             ans.push_back(nums);
             return;
         }
         for(int j=i;j<nums.size();j++){
             swap(nums[i],nums[j]);
-            printAllpermutations(nums,ans,v,i+1);
+            printAllPermutations(nums,ans,i+1);
             swap(nums[i],nums[j]);
         }
     }
     vector<vector<int>> permute(vector<int>& nums) {
         vector<vector<int>>ans;
-        vector<int>v;
         int index=0;
-        printAllpermutations(nums,ans,v,index);
+        printAllPermutations(nums,ans,index);
         return ans;
     }
 };
