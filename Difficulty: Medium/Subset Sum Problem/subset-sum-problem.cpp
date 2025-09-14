@@ -1,17 +1,16 @@
 class Solution {
   public:
-    bool f(vector<int>& arr, int sum,int index,vector<vector<int>>&dp){
+    bool f(vector<int>& arr, int sum,int i,vector<vector<int>>&dp){
         // base cases
         if(sum==0) return true;
-        if(index==0) return (arr[0]==sum);
-        if(dp[sum][index]!=-1) return dp[sum][index];
-        bool excludeAns=f(arr,sum,index-1,dp);
+        if(i==0) return (arr[0]==sum);
+        if(dp[sum][i]!=-1) return dp[sum][i];
+        bool excludeAns=f(arr,sum,i-1,dp);
         bool includeAns=false;
-        if(arr[index]<=sum){
-            includeAns=f(arr,sum-arr[index],index-1,dp);
+        if(arr[i]<=sum){
+            includeAns=f(arr,sum-arr[i],i-1,dp);
         }
-        dp[sum][index]=includeAns | excludeAns;
-        return dp[sum][index];
+        return dp[sum][i]= includeAns | excludeAns;
     }
     bool isSubsetSum(vector<int>& arr, int sum) {
         // code here
