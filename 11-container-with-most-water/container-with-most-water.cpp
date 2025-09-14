@@ -1,10 +1,8 @@
 class Solution {
 public:
     int maxArea(vector<int>& height) {
-        // Two Pointers Approach
         int n=height.size();
-        int lo=0,hi=n-1;
-        int maxWater=INT_MIN;
+        int lo=0,hi=n-1,maxWater=0;
         while(lo<hi){
             int w=hi-lo;
             int ht=min(height[lo],height[hi]);
