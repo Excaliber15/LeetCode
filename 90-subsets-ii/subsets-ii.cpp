@@ -6,11 +6,11 @@ public:
             ans.push_back(v);
             return;
         }
-        // include ans
+        // include case
         v.push_back(nums[i]);
         printUniqueSubsets(nums,ans,v,i+1);
         v.pop_back();
-        // exclude ans
+        // exclude case
         int idx=i+1;
         while(idx<nums.size() && nums[idx]==nums[idx-1]) idx++;
         printUniqueSubsets(nums,ans,v,idx);
