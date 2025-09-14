@@ -7,10 +7,9 @@ class Solution {
         int minAns=1e9;
         for(int k=i;k<j;k++){
             int steps=arr[i-1]*arr[k]*arr[j]+f(arr,i,k,dp)+f(arr,k+1,j,dp);
-            minAns=min(steps,minAns);
+            minAns=min(minAns,steps);
         }
-        dp[i][j]=minAns;
-        return dp[i][j];
+        return dp[i][j]=minAns;
     }
     int matrixMultiplication(vector<int> &arr) {
         // code here
