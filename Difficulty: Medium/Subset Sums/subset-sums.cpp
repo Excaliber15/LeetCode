@@ -6,10 +6,10 @@ class Solution {
             ans.push_back(sum);
             return;
         }
-        // include ans
+        // include case
         printAllSubsetSums(arr,ans,sum+arr[i],i+1);
-        // exclude ans
-        printAllSubsetSums(arr,ans,sum,i+1);
+        // exclude case
+         printAllSubsetSums(arr,ans,sum,i+1);
     }
     vector<int> subsetSums(vector<int>& arr) {
         // code here
