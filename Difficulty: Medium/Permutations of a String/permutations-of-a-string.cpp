@@ -6,7 +6,7 @@ class Solution {
             ans.push_back(s);
             return;
         }
-        for(int j=i;j<s.length();j++){
+        for(int j=i;j<s.size();j++){
             swap(s[i],s[j]);
             printAllPermutations(s,ans,i+1);
             swap(s[i],s[j]);
