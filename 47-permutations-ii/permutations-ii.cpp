@@ -13,11 +13,11 @@ public:
         }
     }
     vector<vector<int>> permuteUnique(vector<int>& nums) {
-        vector<vector<int>>ans;
-        int index=0;
-        printAllPermutations(nums,ans,index);
-        sort(ans.begin(),ans.end());
-        ans.erase(unique(ans.begin(),ans.end()),ans.end());
-        return ans;
+         vector<vector<int>>ans;
+         int index=0;
+         printAllPermutations(nums,ans,index);
+         sort(ans.begin(),ans.end());
+         ans.erase(unique(ans.begin(),ans.end()),ans.end());
+         return ans;
     }
 };
