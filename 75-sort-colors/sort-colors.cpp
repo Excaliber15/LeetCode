@@ -1,7 +1,7 @@
 class Solution {
 public:
     void sortColors(vector<int>& nums) {
-        // Dutch Flag Algorithm
+        // Dutch Flag Algo
         int n=nums.size();
         int lo=0,mid=0,hi=n-1;
         while(mid<=hi){
@@ -13,7 +13,7 @@ public:
                 swap(nums[mid],nums[lo]);
                 lo++,mid++;
             }
-            else mid++; // nums[mid]==1
+            else mid++;
         }
     }
 };
