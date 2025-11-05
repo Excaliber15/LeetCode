@@ -1,9 +1,8 @@
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
-        // Kadanes Algo
-        int maxSum=INT_MIN;
-        int currSum=0;
+        // Kadanes Algorithm
+        int maxSum=INT_MIN,currSum=0;
         for(int i=0;i<nums.size();i++){
             currSum+=nums[i];
             maxSum=max(maxSum,currSum);
