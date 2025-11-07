@@ -6,8 +6,8 @@ public:
         int lo=0,hi=n-1;
         int ans=0,lmax=0,rmax=0;
         while(lo<hi){
-            lmax=max(lmax,height[lo]);
-            rmax=max(rmax,height[hi]);
+            lmax=max(lmax,height[lo]); // max height of left col
+            rmax=max(rmax,height[hi]); // max height of right col
             if(lmax<rmax){
                 ans+=(lmax-height[lo]);
                 lo++;
