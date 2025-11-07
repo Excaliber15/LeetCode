@@ -1,13 +1,12 @@
 class Solution {
 public:
     void combinationSum2_helper(vector<int>& candidates, int target,vector<vector<int>>&ans,vector<int>&v,int idx){
-        // base case
+        // base cases
         if(target==0){
             ans.push_back(v);
             return;
         }
         if(target<0) return;
-
         for(int i=idx;i<candidates.size();i++){
             if(i>idx && candidates[i]==candidates[i-1]) continue;
             v.push_back(candidates[i]);
