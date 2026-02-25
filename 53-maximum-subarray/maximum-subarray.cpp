@@ -1,7 +1,6 @@
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
-        // Kadane's Algorithm
         int n=nums.size();
         int maxSum=INT_MIN;
         int currSum=0;
