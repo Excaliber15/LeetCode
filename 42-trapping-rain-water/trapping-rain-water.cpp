@@ -1,13 +1,12 @@
 class Solution {
 public:
     int trap(vector<int>& height) {
-        // Two Pointers Technique
         int n=height.size();
         int lo=0,hi=n-1;
-        int ans=0,lmax=0,rmax=0;
+        int lmax=0,rmax=0,ans=0;
         while(lo<hi){
-            lmax=max(lmax,height[lo]); // max height of left col
-            rmax=max(rmax,height[hi]); // max height of right col
+            lmax=max(lmax,height[lo]);
+            rmax=max(rmax,height[hi]);
             if(lmax<rmax){
                 ans+=(lmax-height[lo]);
                 lo++;
