@@ -11,8 +11,7 @@ public:
             }
             else if(nums[mid]==0){
                 swap(nums[mid],nums[lo]);
-                lo++;
-                mid++;
+                lo++,mid++;
             }
             else mid++;
         }
