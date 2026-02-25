@@ -7,10 +7,11 @@ class Solution {
         int hi=arr.size()-1;
         while(lo<hi){
             int currSum=arr[lo]+arr[hi];
-            if(currSum==target) return true; // Pair Sum Found
+            if(currSum==target) return true; // Pair sum Found
             else if(currSum>target) hi--;
             else lo++; // currSum<target
         }
-        return false; // pair sum not found
+        // Pair sum not found
+        return false;
     }
 };
