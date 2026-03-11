@@ -1,22 +1,22 @@
 class Solution {
   public:
-    void printAllSubsequneces(string s, vector<string>&ans,int i,string output){
+    void printAllSubsequences(string s,vector<string>&ans,string output,int i){
         // base case
         if(i>=s.size()){
             ans.push_back(output);
             return;
         }
-        // include ans
-        printAllSubsequneces(s,ans,i+1,output+s[i]);
-        // exclude ans
-        printAllSubsequneces(s,ans,i+1,output);
+        // include case
+        printAllSubsequences(s,ans,output+s[i],i+1);
+        // exclude case
+        printAllSubsequences(s,ans,output,i+1);
     }
     vector<string> AllPossibleStrings(string s) {
         // Code here
         vector<string>ans;
-        int index=0;
         string output="";
-        printAllSubsequneces(s,ans,index,output);
+        int index=0;
+        printAllSubsequences(s,ans,output,index);
         sort(ans.begin(),ans.end());
         return ans;
     }
